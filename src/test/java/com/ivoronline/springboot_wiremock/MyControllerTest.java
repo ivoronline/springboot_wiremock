@@ -35,8 +35,12 @@ class PersonServiceTest {
     //CALL SERVICE
     String result = personService.getText();
 
+    //DISPLAY RESULT
+    System.out.println("getText()");
+    System.out.println(result);
+
     //CHECK RESULT
-    assertEquals("Hello John", result);   System.out.println(result);
+    assertEquals("Hello John", result);
 
   }
 
@@ -64,6 +68,7 @@ class PersonServiceTest {
 
     //DISPLAY RESULT: 1 John 20
     String personResultJSON = new ObjectMapper().writeValueAsString(person);
+    System.out.println("getPerson()");
     System.out.println(personResultJSON);
 
     //CHECK RESULT
@@ -99,6 +104,7 @@ class PersonServiceTest {
     Person[] personsResult = personService.getPersons();
 
     //DISPLAY RESULT: [2 John 30, 3 Bill 40]
+    System.out.println("getPersons()");
     for (Person personResult : personsResult) {
       String personResultJSON = new ObjectMapper().writeValueAsString(personResult);
       System.out.println(personResultJSON);
